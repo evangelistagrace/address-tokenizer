@@ -1,4 +1,4 @@
-## Freeform address to address components tokenizer
+## Address Tokenizer
 
 ### How to run
 1. Unzip the downloaded .zip folder
