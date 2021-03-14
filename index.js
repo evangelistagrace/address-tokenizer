@@ -16,7 +16,7 @@ const Address = require('./Address'),
         console.log('Command-line input received:');
         console.log('  Freeform address: ' + result.freeform_address);
         let address = new Address(result.freeform_address)
-        console.log(address.getTokenized())
+        console.log('  Tokenized address: ', address.getTokenized())
     });
     
     function onErr(err) {
