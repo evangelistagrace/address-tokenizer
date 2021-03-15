@@ -53,7 +53,6 @@ function Address(freeformText) {
                 else {
                     arr.push({'section': val.replace(/,|\./g, '').trim()})
                 }
-                
             })
         }
 
@@ -83,7 +82,7 @@ function Address(freeformText) {
       }
 
     let checkAptNo = (text) => {
-        let regex = /^No\s[0-9]*/g
+        let regex = /^\s*No\s[0-9]+/g
         let match = text.match(regex)
         
         if (match) return match[0].replace(/,|\./g, '').trim()
@@ -91,7 +90,7 @@ function Address(freeformText) {
     }
 
     let checkCity = (text) => {
-        let regex = /\W*(Kuala Terengganu|Kuala Lumpur|Kajang|Bangi|Damansara|Petaling Jaya|Puchong|Subang Jaya|Cyberjaya|Putrajaya|Mantin|Kuching|Seremban)\W*/g
+        let regex = /(\W|\s)*(Kuala Terengganu|Kuala Lumpur|Kajang|Bangi|Damansara|Petaling Jaya|Puchong|Subang Jaya|Cyberjaya|Putrajaya|Mantin|Kuching|Seremban)(\W|\s)*/g
         let match = text.match(regex)
         
         if (match) return match[0].replace(/,|\./g, '').trim()
@@ -99,7 +98,7 @@ function Address(freeformText) {
     }
 
     let checkState = (text) => {
-        let regex = /^(\b\d{5}\b)*\s*(Selangor|Terengganu|Pahang|Kelantan|Melaka|Pulau Pinang|Kedah|Johor|Perlis|Sabah|Sarawak)\s*/g
+        let regex = /(\W|\s)*(Selangor|Terengganu|Pahang|Kelantan|Melaka|Pulau Pinang|Kedah|Johor|Perlis|Sabah|Sarawak)(\W|\s)*/g
         let match = text.match(regex)
         
         if (match) return match[0].replace(/,|\./g, '').trim()
@@ -123,7 +122,7 @@ function Address(freeformText) {
     }
 
     let checkStreet = (text) => {
-        let regex = /^(\s)*(Jalan|Jln|Lorong|Persiaran)\s[a-zA-Z]*/g
+        let regex = /^\s*(Jalan|Jln|Lorong|Persiaran)\s([a-zA-Z]|[0-9])*/g
         let match = text.match(regex)
         
         if (match) return match[0].replace(/,|\./g, '').trim()
