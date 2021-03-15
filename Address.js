@@ -55,8 +55,6 @@ function Address(freeformText) {
                 }
             })
         }
-
-        // console.log(arr)
         
         let res = arr.reduce(function(result, currentObject) {
         for(var key in currentObject) {
